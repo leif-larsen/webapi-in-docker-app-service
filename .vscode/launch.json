@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/src/bin/Debug/net6.0/webapi-in-docker-app-service.dll",
+            "program": "${workspaceFolder}/src/Api/bin/Debug/net6.0/webapi-in-docker-app-service.dll",
             "args": [],
             "cwd": "${workspaceFolder}/src",
             "stopAtEntry": false,

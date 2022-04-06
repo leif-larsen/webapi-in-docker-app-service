@@ -1,4 +1,6 @@
-namespace webapi_in_docker_app_service;
+using System;
+
+namespace webapi_in_docker_service;
 
 public class WeatherForecast
 {
