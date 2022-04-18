@@ -50,6 +50,6 @@ stages:
             azureSubscription: 'Private Subscription(1b22c874-e5d0-4404-9588-0c26ef5165fd)'
             appType: 'webAppContainer'
             WebAppName: 'webapi-in-docker'
-            DockerNamespace: 'acrsharedleiflarsen.azurecr.io'
+            DockerNamespace: '$(docker_registry)'
             DockerRepository: 'webapi'
             DockerImageTag: '$(tag)'
