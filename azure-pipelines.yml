@@ -35,3 +35,21 @@ stages:
           docker build . -t '$(image_name):$(tag)' -t '$(image_name):latest'
           docker push '$(image_name):$(tag)'
           docker push '$(image_name):latest'
+  
+- stage: Deploy
+  displayName: Deploy image
+  jobs:
+    - job: Deploy
+      displayName: Deploy
+      pool:
+        vmImage: ubuntu-latest
+      steps:
+        - task: AzureRmWebAppDeployment@4
+          inputs:
+            ConnectionType: 'AzureRM'
+            azureSubscription: 'Private Subscription(1b22c874-e5d0-4404-9588-0c26ef5165fd)'
+            appType: 'webAppContainer'
+            WebAppName: 'webapi-in-docker'
+            DockerNamespace: 'acrsharedleiflarsen.azurecr.io'
+            DockerRepository: 'webapi'
+            DockerImageTag: '$(tag)'
