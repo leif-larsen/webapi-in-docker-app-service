@@ -9,8 +9,9 @@ resources:
 variables:
   - name: tag
     value: '$(Build.BuildId)'
+  - group: 'Docker'
   - name: image_name
-    value: '$(docker_registry)/'
+    value: '$[variables.docker_registry]/webapi'
 
 stages:
 - stage: Build
