@@ -11,7 +11,7 @@ variables:
     value: '$(Build.BuildId)'
   - group: 'Docker'
   - name: image_name
-    value: '$[variables.docker_registry]/webapi'
+    value: '$(docker_registry)/webapi'
 
 stages:
 - stage: Build
